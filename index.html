@@ -79,7 +79,7 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div class="glass-card p-6 rounded-3xl">
                         <div class="flex justify-between items-start mb-6">
-                            <h3 class="text-sm font-bold text-slate-600">📊 การเคลื่อนไหวของสินค้า</h3>
+                            <h3 class="text-sm font-bold text-slate-600">📊 มูลค่าการเคลื่อนไหวของสินค้า</h3>
                         </div>
                         <div class="h-[250px]"><canvas id="chartInOut"></canvas></div>
                     </div>
@@ -93,7 +93,7 @@
             <!-- INVENTORY -->
             <section id="page-items" class="page hidden space-y-4">
                 <div class="relative flex-1">
-                    <input type="text" id="search-input" oninput="renderInventory()" placeholder="ค้นหาสินค้าหรือ SKU..." class="w-full pl-12 pr-4 py-4 glass-card rounded-2xl outline-none focus:ring-2 ring-indigo-500">
+                    <input type="text" id="search-input" oninput="renderInventory()" placeholder="ค้นหาสินค้าหรือ SKU..." class="w-full pl-12 pr-4 py-4 glass-card rou[...]
                     <span class="absolute left-4 top-4 text-slate-300">🔍</span>
                 </div>
                 <div id="inventory-list" class="grid grid-cols-1 md:grid-cols-2 gap-3"></div>
@@ -114,14 +114,14 @@
                             </div>
                         </div>
                         <div id="scanner-controls" class="space-y-3">
-                            <button id="start-scan-btn" onclick="startScanner()" class="w-full bg-slate-900 text-white py-5 rounded-2xl font-bold text-lg">เปิดกล้องสแกน</button>
-                            <button id="stop-scan-btn" onclick="stopScanner()" class="hidden w-full bg-rose-50 text-rose-600 py-5 rounded-2xl font-bold border border-rose-100">ปิดกล้อง</button>
+                            <button id="start-scan-btn" onclick="startScanner()" class="w-full bg-slate-900 text-white py-5 rounded-2xl font-bold text-lg">เปิดกล้องสแกน<[...]
+                            <button id="stop-scan-btn" onclick="stopScanner()" class="hidden w-full bg-rose-50 text-rose-600 py-5 rounded-2xl font-bold border border-rose-100">ปิดกล้�[...]
                             <div class="flex items-center gap-4 py-2">
                                 <div class="flex-1 h-[1px] bg-slate-200"></div>
                                 <span class="text-[10px] font-bold text-slate-300 uppercase tracking-widest">หรือ</span>
                                 <div class="flex-1 h-[1px] bg-slate-200"></div>
                             </div>
-                            <button onclick="changePage('items'); setTimeout(() => document.getElementById('search-input').focus(), 300)" class="w-full bg-white text-indigo-600 py-4 rounded-2xl font-bold border-2 border-indigo-100 flex items-center justify-center gap-2">
+                            <button onclick="changePage('items'); setTimeout(() => document.getElementById('search-input').focus(), 300)" class="w-full bg-white text-indigo-600 py-4 rounded-2xl f[...]
                                 <span>⌨️</span> รับ-เบิก ด้วยตนเอง (Manual)
                             </button>
                         </div>
@@ -181,8 +181,8 @@
                             <p class="text-[10px] text-rose-400 mt-1 uppercase font-bold tracking-widest">Danger Zone</p>
                         </div>
                     </div>
-                    <p class="text-sm text-rose-700 mb-6 leading-relaxed">การล้างข้อมูลจะลบรายการสินค้าและประวัติทั้งหมดในระบบ และไม่สามารถกู้คืนได้ โปรดมั่นใจว่าคุณได้สำรองข้อมูล (Export CSV) ไว้แล้วก่อนดำเนินการ</p>
-                    <button onclick="requestAuth('reset')" class="w-full py-4 bg-rose-600 text-white rounded-2xl font-bold shadow-lg shadow-rose-100 flex items-center justify-center gap-2 active:scale-95 transition-transform">
+                    <p class="text-sm text-rose-700 mb-6 leading-relaxed">การล้างข้อมูลจะลบรายการสินค้าและประวัติท�[...]
+                    <button onclick="requestAuth('reset')" class="w-full py-4 bg-rose-600 text-white rounded-2xl font-bold shadow-lg shadow-rose-100 flex items-center justify-center gap-2 active:[...]
                         <span>🗑️</span> ล้างข้อมูลทั้งหมด
                     </button>
                     <input type="file" id="csv-input" accept=".csv" class="hidden" onchange="handleCSVImport(event)">
@@ -216,7 +216,7 @@
         <div class="bg-white w-full max-w-sm rounded-[40px] p-8 text-center shadow-2xl">
             <div class="w-20 h-20 bg-rose-100 text-rose-600 rounded-full flex items-center justify-center text-4xl mx-auto mb-6">⚠️</div>
             <h3 class="text-xl font-bold text-slate-800 mb-2">ยืนยันการล้างข้อมูล?</h3>
-            <p class="text-sm text-slate-500 mb-8">ข้อมูลสินค้าและกราฟสถิติทั้งหมดจะถูกลบถาวร คุณแน่ใจใช่หรือไม่?</p>
+            <p class="text-sm text-slate-500 mb-8">ข้อมูลสินค้าและกราฟสถิติทั้งหมดจะถูกลบถาวร คุณแน��[...]
             <div class="flex flex-col gap-3">
                 <button id="btn-final-reset" class="w-full py-4 bg-rose-600 text-white rounded-2xl font-bold text-lg">ใช่, ล้างข้อมูลทั้งหมด</button>
                 <button onclick="document.getElementById('modal-confirm').classList.add('hidden')" class="w-full py-3 text-slate-400 font-bold">ยกเลิก</button>
@@ -282,7 +282,7 @@
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
         import { getAuth, signInAnonymously, onAuthStateChanged, signInWithCustomToken } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
-        import { getFirestore, doc, collection, onSnapshot, setDoc, addDoc, updateDoc, deleteDoc, writeBatch, getDocs, arrayUnion, arrayRemove } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+        import { getFirestore, doc, collection, onSnapshot, setDoc, addDoc, updateDoc, deleteDoc, writeBatch, getDocs, arrayUnion, arrayRemove } from "https://www.gstatic.com/firebasejs/11.6.1/fi[...]
 
     const firebaseConfig = {
           apiKey: "AIzaSyCo_fjRMwdm6cWY9GTI9jYDgcWQnZY-1zg",
@@ -431,7 +431,7 @@
             }
         };
 
-        window.requestAuth = (action, params = null) => { currentAuthAction = { action, params }; pinInput = ""; window.updatePinUI(); document.getElementById('modal-pin').classList.remove('hidden'); };
+        window.requestAuth = (action, params = null) => { currentAuthAction = { action, params }; pinInput = ""; window.updatePinUI(); document.getElementById('modal-pin').classList.remove('hidde[...]
         window.closePinModal = () => document.getElementById('modal-pin').classList.add('hidden');
         
         async function triggerReset() {
@@ -520,7 +520,7 @@
                     const p = r.split(',');
                     if(p.length >= 7) {
                         const d = doc(collection(db, 'artifacts', appId, 'public', 'data', 'inventory'));
-                        batch.set(d, { sku: p[0].trim(), name: p[1].trim(), cat: p[2].trim(), unit: p[3].trim(), price: parseFloat(p[4])||0, qty: parseInt(p[5])||0, min: parseInt(p[6])||0, timestamp: Date.now() });
+                        batch.set(d, { sku: p[0].trim(), name: p[1].trim(), cat: p[2].trim(), unit: p[3].trim(), price: parseFloat(p[4])||0, qty: parseInt(p[5])||0, min: parseInt(p[6])||0, timest[...]
                     }
                 });
                 await batch.commit();
@@ -578,18 +578,18 @@
                 return d.getMonth() === thisMonth && d.getFullYear() === thisYear;
             });
 
-            const inQty = monthLogs.filter(l => l.type === 'in').reduce((s, l) => s + l.amount, 0);
-            const outQty = monthLogs.filter(l => l.type === 'out').reduce((s, l) => s + l.amount, 0);
+            const inValue = monthLogs.filter(l => l.type === 'in').reduce((s, l) => s + (l.amount * (l.price || 0)), 0);
+            const outValue = monthLogs.filter(l => l.type === 'out').reduce((s, l) => s + (l.amount * (l.price || 0)), 0);
 
             if(document.getElementById('stat-value')) document.getElementById('stat-value').innerText = `฿${totalVal.toLocaleString()}`;
             if(document.getElementById('stat-low')) document.getElementById('stat-low').innerText = lowStock;
-            if(document.getElementById('stat-in')) document.getElementById('stat-in').innerText = inQty;
-            if(document.getElementById('stat-out')) document.getElementById('stat-out').innerText = outQty;
+            if(document.getElementById('stat-in')) document.getElementById('stat-in').innerText = `฿${inValue.toLocaleString()}`;
+            if(document.getElementById('stat-out')) document.getElementById('stat-out').innerText = `฿${outValue.toLocaleString()}`;
         };
 
         window.renderDepts = () => {
             const c = document.getElementById('dept-list');
-            if(c) c.innerHTML = window.appData.depts.map(d => `<div class="bg-indigo-50 text-indigo-700 px-3 py-1 rounded-full text-xs font-bold flex items-center gap-2">${d} <button onclick="removeDept('${d}')">×</button></div>`).join('');
+            if(c) c.innerHTML = window.appData.depts.map(d => `<div class="bg-indigo-50 text-indigo-700 px-3 py-1 rounded-full text-xs font-bold flex items-center gap-2">${d} <button onclick="rem[...]
         };
 
         window.updateDeptSelect = () => {
@@ -599,8 +599,8 @@
 
         window.setTransType = (type) => {
             window.currentTransType = type;
-            document.getElementById('t-mode-in').className = `flex-1 py-3 text-sm font-bold rounded-xl transition-all ${type === 'in' ? 'bg-emerald-500 text-white shadow-lg' : 'bg-transparent text-slate-500'}`;
-            document.getElementById('t-mode-out').className = `flex-1 py-3 text-sm font-bold rounded-xl transition-all ${type === 'out' ? 'bg-rose-500 text-white shadow-lg' : 'bg-transparent text-slate-500'}`;
+            document.getElementById('t-mode-in').className = `flex-1 py-3 text-sm font-bold rounded-xl transition-all ${type === 'in' ? 'bg-emerald-500 text-white shadow-lg' : 'bg-transparent tex[...]
+            document.getElementById('t-mode-out').className = `flex-1 py-3 text-sm font-bold rounded-xl transition-all ${type === 'out' ? 'bg-rose-500 text-white shadow-lg' : 'bg-transparent text[...]
             document.getElementById('m-dept-container').style.display = type === 'in' ? 'none' : 'block';
         };
 
@@ -610,7 +610,7 @@
             document.getElementById('m-item-name').innerText = item.name;
             document.getElementById('m-item-sku').innerText = item.sku;
             window.setTransType('out');
-            document.getElementById('btn-confirm-trans').onclick = () => window.processTransaction(id, window.currentTransType, parseInt(document.getElementById('m-amount').value), window.currentTransType === 'in' ? 'CENTRAL' : document.getElementById('m-dept').value);
+            document.getElementById('btn-confirm-trans').onclick = () => window.processTransaction(id, window.currentTransType, parseInt(document.getElementById('m-amount').value), window.current[...]
             document.getElementById('modal-trans').classList.remove('hidden');
         };
 
@@ -625,8 +625,8 @@
             if(!ctx1 || !ctx2) return;
 
             const logs = window.appData.logs || [];
-            const inTotal = logs.filter(l => l.type === 'in').reduce((s,l) => s + l.amount, 0);
-            const outTotal = logs.filter(l => l.type === 'out').reduce((s,l) => s + l.amount, 0);
+            const inValue = logs.filter(l => l.type === 'in').reduce((s,l) => s + (l.amount * (l.price || 0)), 0);
+            const outValue = logs.filter(l => l.type === 'out').reduce((s,l) => s + (l.amount * (l.price || 0)), 0);
 
             // Dept usage
             const deptMap = {};
@@ -640,7 +640,7 @@
                 data: { 
                     labels: ['รับเข้า', 'เบิกจ่าย'], 
                     datasets: [{ 
-                        data: [inTotal, outTotal], 
+                        data: [inValue, outValue], 
                         backgroundColor: ['#10b981', '#ef4444'],
                         borderRadius: 8
                     }] 
@@ -673,7 +673,7 @@
 
         window.renderAudit = () => {
             const table = document.getElementById('audit-table');
-            if(table) table.innerHTML = window.appData.inventory.length ? window.appData.inventory.map(i => `<tr class="border-b"><td class="p-4"><b>${i.name}</b><br><small class="text-slate-400 font-mono">${i.sku}</small></td><td class="p-4 text-center font-bold">${i.qty}</td><td class="p-4 text-right">฿${(i.qty*i.price).toLocaleString()}</td></tr>`).join('') : '<tr><td colspan="3" class="p-10 text-center text-slate-400">ไม่มีข้อมูลคงเหลือ</td></tr>';
+            if(table) table.innerHTML = window.appData.inventory.length ? window.appData.inventory.map(i => `<tr class="border-b"><td class="p-4"><b>${i.name}</b><br><small class="text-slate-400 [...]
         };
 
         window.resetForm = () => {
